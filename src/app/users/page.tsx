@@ -1,7 +1,9 @@
 const Users = () => {
-    return (
-        <div>Users Page</div>
-    )
-}
+  return (
+    <>
+      <h3>Users Page</h3>
+    </>
+  );
+};
 
-export default Users; 
+export default Users;

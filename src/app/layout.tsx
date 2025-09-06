@@ -1,9 +1,13 @@
+import Navigation from "@/components/navigation";
+// import Footer from "@/components/home/footer";
+
 export default function RootLayout({children }: {children: React.ReactNode}){
   return (
     <html>
       <body>
-        <h1>Hello root layout</h1>
+        <Navigation />
         {children}
+        {/* <Footer /> */}
       </body>
     </html>
   );
