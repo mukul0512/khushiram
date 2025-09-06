@@ -1,3 +1,4 @@
+import "@/app/globals.css";
 import Navigation from "@/components/navigation";
 // import Footer from "@/components/home/footer";
 
