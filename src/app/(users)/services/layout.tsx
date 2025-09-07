@@ -1,8 +1,6 @@
-import "@/app/globals.css";
-
 export const metadata = {
-  title: "About",
-  description: "Khushiram is the nickname of Mukul Karnwal",
+  title: "Services",
+  description: "We provide a wide range of services to our clients",
   authors: [
     { name: "Khushiram Karnwal", url: "https://github.com/mukul0512" },
     {
@@ -10,15 +8,15 @@ export const metadata = {
       url: "https://www.linkedin.com/in/mukul-karnwal-588486238/",
     },
   ],
-  keywords: ["about us", "about", "khushiram", "mukul", "karnwal"],
+  keywords: ["users services", "services", "users"],
   icons: {
-    icon: "/icons/about.svg",
-    shortcut: "/icons/about-shortcut.svg",
-    apple: "/icons/about-apple.svg",
+    icon: "/icons/services.svg",
+    shortcut: "/icons/services-shortcut.svg",
+    apple: "/icons/services-apple.svg",
   },
 };
 
-export default function AboutLayout({
+export default function ServicesLayout({
   children,
 }: {
   children: React.ReactNode;

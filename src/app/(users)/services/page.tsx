@@ -1,7 +1,7 @@
 "use client";
 import style from "./service.module.css";
 import Image from "next/image";
-import mukul from "../../../../public/mukul.jpg";
+import logo from "../../../../public/assets/logo.svg";
 import gsap from "gsap";
 import { easeInOut, motion } from "motion/react";
 import { useEffect, useRef } from "react";
@@ -15,31 +15,6 @@ const cardVariant = {
 const Services = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const hoverTween = useRef<gsap.core.Tween | null>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const element = cardRef.current;
-
-      if (!element) return;
-
-      // set
-      gsap.set(element, {
-        opacity: 0,
-        y: 50,
-        scale: 1,
-      });
-      // to
-      gsap.to(element, {
-        duration: 0.8,
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        ease: "power3.out",
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   const handleMouseEnter = () => {
     if (!cardRef.current) return;
@@ -76,9 +51,34 @@ const Services = () => {
     });
   };
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const element = cardRef.current;
+
+      if (!element) return;
+
+      // set
+      gsap.set(element, {
+        opacity: 0,
+        y: 50,
+        scale: 1,
+      });
+      // to
+      gsap.to(element, {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "power3.out",
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section className="font-roboto">
-      <h1 className={style.commonHeading}>Service Page</h1>
+      <h1 className={style.commonHeading}>Services Page</h1>
 
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-12 text-khaki-800">
@@ -101,7 +101,7 @@ const Services = () => {
               className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center"
             >
               <Image
-                src="/mukul.jpg"
+                src="/assets/logo.svg"
                 width={500}
                 height={500}
                 alt="mukul"
@@ -139,13 +139,13 @@ const Services = () => {
           <div className="bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
             <div className="w-full h-full relative bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
               <Image
-                src={mukul}
+                src={logo}
                 alt="mukul khushiram"
                 fill={true}
                 quality={100}
                 priority={false}
                 placeholder="blur"
-                blurDataURL=""
+                blurDataURL="data:image/webp;base64,UklGRiYCAABXRUJQVlA4WAoAAAAgAAAAXAAAXAAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggOAAAALAEAJ0BKl0AXQA+7Xa4VimnJSOg6AEwHYlpAAAHdlV8vcae8m+nTp06dOnTfAAA/vEIgAAAAAAA"
               />
             </div>
           </div>
