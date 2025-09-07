@@ -1,12 +1,10 @@
-import Link from "next/link";
+import CustomButton from "@/components/customButton";
 
 const Home = () => {
   return (
     <>
       <h3>About Page</h3>
-      <button>
-        <Link href="/">Go to Home Page</Link>
-      </button>
+      <CustomButton href="/">Go to Home Page</CustomButton>
     </>
   );
 };
