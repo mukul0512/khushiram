@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation";
 
 export default function AdminLayout({children }: {children: React.ReactNode}){
   return (
-    <html>
+    <html lang="en">
       <body>
         <Navigation />
         {children}

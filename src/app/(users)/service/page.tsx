@@ -78,10 +78,10 @@ const Services = () => {
 
   return (
     <section className="font-roboto">
-      <h1 className={style.common_heading}>Hello Services</h1>
+      <h1 className={style.commonHeading}>Service Page</h1>
 
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-3xl font-bold text-center mb-12 text-khaki-800">
           Our Team
         </h2>
 
