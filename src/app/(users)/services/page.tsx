@@ -114,7 +114,7 @@ const Services = () => {
               transition={{ ease: easeInOut, delay: 0.6 }}
               className="text-lg font-semibold text-center text-gray-800"
             >
-              Mike Johnson
+              Khushiram Karnwal
             </motion.h3>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -131,7 +131,7 @@ const Services = () => {
               transition={{ ease: easeInOut, delay: 1 }}
               className="text-xs text-gray-500 text-center mt-1"
             >
-              Node.js & Python
+              Node.js & Next.js
             </motion.p>
           </motion.div>
 
@@ -158,10 +158,10 @@ const Services = () => {
             className="bg-white rounded-lg shadow-md p-6 "
           >
             <div className="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-purple-600">MJ</span>
+              <span className="text-2xl font-bold text-purple-600">K</span>
             </div>
             <h3 className="text-lg font-semibold text-center text-gray-800">
-              Mike Johnson
+              Khushiram
             </h3>
             <p className="text-sm text-gray-600 text-center mt-2">
               Backend Developer
@@ -174,10 +174,10 @@ const Services = () => {
           {/* <!-- Team Member 4 --> */}
           <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
             <div className="w-24 h-24 bg-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-pink-600">EW</span>
+              <span className="text-2xl font-bold text-pink-600">MK</span>
             </div>
             <h3 className="text-lg font-semibold text-center text-gray-800">
-              Emily Wilson
+              Mukul Khushiram
             </h3>
             <p className="text-sm text-gray-600 text-center mt-2">
               Product Manager
@@ -190,10 +190,10 @@ const Services = () => {
           {/* <!-- Team Member 5 --> */}
           <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
             <div className="w-24 h-24 bg-orange-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-orange-600">DL</span>
+              <span className="text-2xl font-bold text-orange-600">M</span>
             </div>
             <h3 className="text-lg font-semibold text-center text-gray-800">
-              David Lee
+              Mukul
             </h3>
             <p className="text-sm text-gray-600 text-center mt-2">
               DevOps Engineer
@@ -206,10 +206,10 @@ const Services = () => {
           {/* <!-- Team Member 6 --> */}
           <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
             <div className="w-24 h-24 bg-teal-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-teal-600">AB</span>
+              <span className="text-2xl font-bold text-teal-600">KM</span>
             </div>
             <h3 className="text-lg font-semibold text-center text-gray-800">
-              Anna Brown
+              Khushiram Mukul
             </h3>
             <p className="text-sm text-gray-600 text-center mt-2">
               QA Engineer

@@ -6,13 +6,13 @@ const Navigation = () => {
   const navItems = [
     { href: " /", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/service", label: "Service" },
+    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
     <>
-      <header style={navigationStyle.header}>
+      <header style={navigationStyle.header} className="font-work">
         <div style={navigationStyle.logo}>Logo</div>
         <nav>
           <ul style={navigationStyle.navList}>

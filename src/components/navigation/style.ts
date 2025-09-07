@@ -5,6 +5,7 @@ export const navigationStyle = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px",
+    // fontFamily: "var(--font-roboto)",
   },
   logo: {
     fontSize: "20px",
