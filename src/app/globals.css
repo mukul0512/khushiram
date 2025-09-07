@@ -2,7 +2,7 @@
 
 :root {
   --background: #171717;
-  --foreground: #ffffff;;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -21,6 +21,13 @@
   }
 }
 
+@layer utilities {
+  /* customButton utilities  */
+  .custom-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-1 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg;
+  }
+}
+
 body {
   background: rgb(14, 14, 14);
   color: var(--foreground);
@@ -35,10 +42,6 @@ a:hover {
 .commonHeading {
   color: pink;
 }
-
-/* .text-sm {
-  color: rgb(29, 1, 1);
-} */
 
 /* ======================== */
 

@@ -4,7 +4,9 @@ import { navigationStyle } from "./style";
 
 const Navigation = () => {
   const navItems = [
-    { href: " /", label: "Home" },
+    { href: "/", label: "Home" },
+    { href: "/client", label: "Client" },
+    { href: "/server", label: "Server" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
