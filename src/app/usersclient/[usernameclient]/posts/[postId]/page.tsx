@@ -12,7 +12,7 @@ const SingleProfilePostClient = (props: {
   return (
     <>
       <div className="commonHeading" style={{ marginTop: "20px" }}>
-        <h2>Dynamic route segment</h2>
+        <h2> Client Side Dynamic route segment</h2>
         <p>Username: {user?.usernameclient}</p>
         <p>Post ID: {user?.postId}</p>
       </div>
