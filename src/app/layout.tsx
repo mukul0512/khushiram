@@ -12,19 +12,18 @@ export const metadata = {
   keywords: ["peeyush bhaiya", "mukul", "khushiram", "pulkit", "rishab"],
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
     ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  metadataBase: new URL("https://www.linkedin.com/in/mukul-karnwal-588486238/"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   openGraph: {
     title: "Khushiram Karnwal",
     description: "Welcome to our website",
-    url: "https://github.com/mukul0512",
+    url: process.env.NEXT_PUBLIC_SITE_URL!,
     siteName: "Khushiram Karnwal",
     images: [
       {
@@ -40,7 +39,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Khushiram Karnwal",
     description: "We are a team of developers",
-    creator: "@mukul0512",
+    creator: "@karnwal_mukul",
     images: ["/assets/logo.svg"],
   },
 };
