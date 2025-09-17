@@ -14,15 +14,15 @@ const cardVariant = {
 
 const Services = () => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
   const hoverTween = useRef<gsap.core.Tween | null>(null);
+  const autoTween = useRef<gsap.core.Timeline | null>(null);
 
   const handleMouseEnter = () => {
     if (!cardRef.current) return;
-
     if (hoverTween.current) {
       hoverTween.current.kill();
     }
-
     hoverTween.current = gsap.to(cardRef.current, {
       duration: 0.3,
       y: -50,
@@ -35,12 +35,10 @@ const Services = () => {
 
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
-
     // Kill any existing hover animation
     if (hoverTween.current) {
       hoverTween.current.kill();
     }
-
     hoverTween.current = gsap.to(cardRef.current, {
       duration: 0.3,
       y: 0,
@@ -54,9 +52,7 @@ const Services = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const element = cardRef.current;
-
       if (!element) return;
-
       // set
       gsap.set(element, {
         opacity: 0,
@@ -76,15 +72,57 @@ const Services = () => {
     return () => ctx.revert();
   }, []);
 
+  // Auto animation for card 2
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const element = card2Ref.current;
+      if (!element) {
+        return;
+      }
+      // Initial setup
+      gsap.set(element, {
+        opacity: 0,
+        y: 30,
+        scale: 1,
+      });
+      // Entry animation
+      gsap.to(element, {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+      // Continuous floating animation
+      autoTween.current = gsap.timeline({ repeat: -1, yoyo: true });
+      autoTween.current.to(element, {
+        duration: 2,
+        y: -15,
+        scale: 1.02,
+        rotation: 2,
+        boxShadow:
+          "0 15px 25px -5px rgb(0 0 0 / 0.15), 0 10px 10px -5px rgb(0 0 0 / 0.04)",
+        ease: "power2.inOut",
+        delay: 1, // Start floating after entry animation
+      });
+    });
+
+    return () => {
+      ctx.revert();
+      if (autoTween.current) {
+        autoTween.current.kill();
+      }
+    };
+  }, []);
+
   return (
     <section className="font-roboto">
       <h1 className={style.commonHeading}>Services Page</h1>
-
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-12 text-khaki-800">
           Our Team
         </h2>
-
         <div className="grid grid-cols-3 gap-8">
           {/* <!-- Team Member 1 --> */}
           <motion.div
@@ -134,22 +172,31 @@ const Services = () => {
               Node.js & Next.js
             </motion.p>
           </motion.div>
-
           {/* <!-- Team Member 2 --> */}
-          <div className="bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-            <div className="w-full h-full relative bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+          <div ref={card2Ref} className="bg-white rounded-lg shadow-md p-6">
+            <div className="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
               <Image
                 src={logo}
                 alt="mukul khushiram"
-                fill={true}
+                width={96}
+                height={96}
                 quality={100}
                 priority={false}
                 placeholder="blur"
                 blurDataURL="data:image/webp;base64,UklGRiYCAABXRUJQVlA4WAoAAAAgAAAAXAAAXAAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggOAAAALAEAJ0BKl0AXQA+7Xa4VimnJSOg6AEwHYlpAAAHdlV8vcae8m+nTp06dOnTfAAA/vEIgAAAAAAA"
+                className="w-full h-full rounded-full object-cover"
               />
             </div>
+            <h3 className="text-lg font-semibold text-center text-gray-800">
+              Mukul Khushiram
+            </h3>
+            <p className="text-sm text-gray-600 text-center mt-2">
+              Frontend Developer
+            </p>
+            <p className="text-xs text-gray-500 text-center mt-1">
+              React & Next.js
+            </p>
           </div>
-
           {/* <!-- Team Member 3 --> */}
           <div
             ref={cardRef}
@@ -170,7 +217,6 @@ const Services = () => {
               Node.js & Python
             </p>
           </div>
-
           {/* <!-- Team Member 4 --> */}
           <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
             <div className="w-24 h-24 bg-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -186,7 +232,6 @@ const Services = () => {
               Strategy & Analytics
             </p>
           </div>
-
           {/* <!-- Team Member 5 --> */}
           <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
             <div className="w-24 h-24 bg-orange-200 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -202,7 +247,6 @@ const Services = () => {
               AWS & Docker
             </p>
           </div>
-
           {/* <!-- Team Member 6 --> */}
           <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
             <div className="w-24 h-24 bg-teal-200 rounded-full mx-auto mb-4 flex items-center justify-center">
