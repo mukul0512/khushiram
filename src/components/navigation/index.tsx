@@ -15,6 +15,7 @@ const Navigation = () => {
     { href: "/", label: "Home" },
     { href: "/client", label: "Client" },
     { href: "/server", label: "Server" },
+    { href: "/rendering-poc", label: "Rendering POC" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },

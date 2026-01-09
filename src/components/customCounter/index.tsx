@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 const CustomCounter = () => {
@@ -22,7 +24,7 @@ const CustomCounter = () => {
           Reset
         </button>
       </div>
-      <h3>Result: {increment}</h3>
+      <h3 style={{ color: "black" }}>Result: <span style={{ color: "black" }}>{increment}</span></h3>
     </>
   );
 };
