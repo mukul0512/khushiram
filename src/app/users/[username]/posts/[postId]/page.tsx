@@ -8,7 +8,7 @@ const SingleProfilePost = async (props: {
   return (
     <>
       <div className="commonHeading" style={{ marginTop: "20px" }}>
-        <h2>Dynamic route segment</h2>
+        <h2>Server Side Dynamic route segment</h2>
         <p>Username: {user?.username}</p>
         <p>Post ID: {user?.postId}</p>
       </div>
