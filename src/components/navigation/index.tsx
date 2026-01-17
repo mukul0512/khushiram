@@ -21,6 +21,7 @@ const Navigation = () => {
     { href: "/contact", label: "Contact" },
     { href: "/users/mukul-karnwal/posts/123", label: "ServerSideDynamicRouteSegment" },
     { href: "/usersclient/mukul-karnwal/posts/123", label: "ClientSideDynamicRouteSegment" },
+    { href: "/products", label: "Products" },
   ];
 
   useEffect(() => {
